@@ -1,37 +1,37 @@
-name: 'SimpleCov+ Action'
-description: 'Enabling SimpleCov support for Github Actions'
-author: 'Josh Frankel'
+name: "SimpleCov+ Action"
+description: "Enabling SimpleCov support for Github Actions"
+author: "Josh Frankel"
 inputs:
   github_token:
-    description: 'Github token for create checks'
+    description: "Github token for create checks"
     required: true
   check_job_name:
     description: "The name of the check's job"
-    default: 'SimpleCov'
+    default: "SimpleCov"
   minimum_suite_coverage:
-    description: 'Minimum test suite coverage percentage'
+    description: "Minimum test suite coverage percentage"
     default: 90
   minimum_file_coverage:
-    description: 'Minimum coverage percent for every file (requres simplecov-json)'
+    description: "Minimum coverage percent for every file (requres simplecov-json)"
     default: 70
   coverage_path:
-    description: 'File path to coverage results'
-    default: 'coverage/.last_run.json'
+    description: "File path to coverage results"
+    default: "coverage/.last_run.json"
   coverage_json_path:
-    description: 'File path to simplecov-json coverage results (only when using simplecov-json)'
-    default: 'coverage/coverage.json'
+    description: "File path to simplecov-json coverage results (only when using simplecov-json)"
+    default: "coverage/coverage.json"
   debug_mode:
-    description: 'Display logs for debugging'
+    description: "Display logs for debugging"
     default: false
   on_fail_status:
-    description: 'The status to set when coverage fails. You might want neutral if you want things to be informative, for example.'
-    default: 'failure'
+    description: "The status to set when coverage fails. You might want neutral if you want things to be informative, for example."
+    default: "failure"
   github_repo_api_url:
-    description: 'The github repo api url'
-    default: 'https://api.github.com/repos'
+    description: "The github repo api url"
+    default: "https://api.github.com/repos"
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: docker://ghcr.io/easyship/simplecov-check-action:main
 branding:
-  icon: 'check-circle'
-  color: 'gray-dark'
+  icon: "check-circle"
+  color: "gray-dark"
